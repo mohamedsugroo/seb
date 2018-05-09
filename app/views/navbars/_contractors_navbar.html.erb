@@ -1,0 +1,11 @@
+<h1> contractor_signed_in </h1>
+<% if contractor_signed_in? %>
+  <li>
+	  <%= link_to('Logout', destroy_contractor_session_path, method: :delete) %>
+	  <%= current_contractor.fullname %>                
+  </li>
+<% else %>
+  <li>
+	  <%= link_to('Login', new_contractor_session_path)  %>  
+  </li>
+<% end %>

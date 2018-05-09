@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contractor_aproval.name %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @contractor_aproval.admin_id %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @contractor_aproval.note %>
+</p>
+
+<%= link_to 'Edit', edit_contractor_aproval_path(@contractor_aproval) %> |
+<%= link_to 'Back', contractor_aprovals_path %>

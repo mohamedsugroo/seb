@@ -1,0 +1,125 @@
+<div class="container pageRegistertwo">
+
+  <div class="row">
+    
+    <div class="col">      
+
+      <h2>Sign up</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+
+        <div class="page_one_company">
+
+            <div class="field">
+              <%= f.label :name %><br />
+              <%= f.text_field :name, class: 'form-control form-control-lg' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :company_registration_number %><br />
+              <%= f.text_field :company_registration_number, class: 'form-control form-control-lg' %>
+            </div>
+
+
+            <div class="row">
+              <div class="col">
+                
+                <div class="field">
+                  <%= f.label :phone_number %><br />
+                  <%= f.text_field :phone_number, class: 'form-control form-control-lg' %>
+                </div>
+
+              </div>
+              <div class="col">
+
+                <div class="field">
+                  <%= f.label :Work_number %><br />
+                  <%= f.text_field :Work_number, class: 'form-control form-control-lg' %>
+                </div>
+              
+              </div>
+            </div>
+
+
+            
+
+            <div class="field">
+              <%= f.label :first_line_address %><br />
+              <%= f.text_field :first_line_address, class: 'form-control form-control-lg' %>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="field">
+                  <%= f.label :city %><br />
+                  <%= f.text_field :city, class: 'form-control form-control-lg' %>
+                </div>
+              </div>
+              <div class="col">
+                  <div class="field">
+                  <%= f.label :country %><br />
+                  <%= f.text_field :country, class: 'form-control form-control-lg' %>
+                </div>
+              </div>
+              <div class="col">
+                
+                <div class="field">
+                  <%= f.label :postcode %><br />
+                  <%= f.text_field :postcode, class: 'form-control form-control-lg' %>
+                </div>
+
+              </div>
+            </div>
+
+            <br>
+
+            <label class="btn btn-primary btn-lg" id="second_page_company">
+              Next Step
+            </label>
+        
+
+        </div>
+
+
+        <div class="page_two_company hidden">
+
+
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control form-control-lg' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control form-control-lg' %>
+            </div>
+
+            <div class="actions">
+              <br>
+              <%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %>
+            </div>
+
+        </div>
+      <% end %>
+
+      <%= render "companies/shared/links" %>
+
+
+      </div>
+    <div class="col">
+      Companies
+    </div>
+  </div>
+
+
+</div>

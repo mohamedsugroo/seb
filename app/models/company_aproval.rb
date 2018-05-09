@@ -1,0 +1,2 @@
+class CompanyAproval < ApplicationRecord
+end

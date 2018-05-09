@@ -1,0 +1,2 @@
+class ContractorAproval < ApplicationRecord
+end

@@ -1,0 +1,17 @@
+<% if contractor_signed_in? %>
+
+	<%= render 'navbars/contractors_navbar' %>
+
+<% elsif company_signed_in? %>
+
+	<%= render 'navbars/company_navbar' %>
+
+<% elsif admin_signed_in? %>
+
+	<%= render 'navbars/admin_navbar' %>
+
+<% else %>
+
+	<%= render 'navbars/normal' %>
+
+<% end %>

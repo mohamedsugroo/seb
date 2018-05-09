@@ -1,0 +1,25 @@
+body {
+	width: 100% !important;
+}
+
+
+.nav_white {
+	box-shadow: 0px 1px 75px -30px rgba(0,0,0,0.46) !important;
+	position: relative;
+	width: 100%;
+	z-index: 1000;
+}
+.search_box {
+	display: inline-block;
+    margin-left: 27px;
+}
+
+
+
+.nav_avatar {
+    background: red;
+    width: 43px;
+    height: 42px;
+    margin: -10px;
+    border-radius: 100%;
+}

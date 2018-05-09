@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contractor Aprovals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Admin</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contractor_aprovals.each do |contractor_aproval| %>
+      <tr>
+        <td><%= contractor_aproval.name %></td>
+        <td><%= contractor_aproval.admin_id %></td>
+        <td><%= contractor_aproval.note %></td>
+        <td><%= link_to 'Show', contractor_aproval %></td>
+        <td><%= link_to 'Edit', edit_contractor_aproval_path(contractor_aproval) %></td>
+        <td><%= link_to 'Destroy', contractor_aproval, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contractor Aproval', new_contractor_aproval_path %>

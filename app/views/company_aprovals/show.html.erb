@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company_aproval.name %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @company_aproval.admin_id %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @company_aproval.note %>
+</p>
+
+<%= link_to 'Edit', edit_company_aproval_path(@company_aproval) %> |
+<%= link_to 'Back', company_aprovals_path %>

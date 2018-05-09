@@ -1,0 +1,59 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div class="card p-3">
+				<h5>Company Profile</h5>
+				<hr>
+				<p>
+
+					Creating a company profile will give you the ability to post jobs. <br> <br>
+					<blockquote>
+						note company profile is suitable for companies who wish to post jobs only. Companies are not allowed to bid on jobs as the biding system is strictly for individual contractors 
+					</blockquote>
+					
+
+				</p>
+
+				<div class="action">
+					<%= link_to('Create Profile', new_company_registration_path, class: 'btn btn-primary btn-lg')  %>
+				</div>
+
+			</div>
+		</div>
+		<div class="col">
+			<div class="card p-3">
+				<h5>Contractor Profile</h5>
+				<hr>
+
+				<p>
+
+					Creating a personal profile will give you the ability to bid on any given job.
+					<br> <br> 
+
+					<blockquote>
+						( personal profile is suitable for security guards. please note by creating a personal profile you will not be able to post jobs )
+					</blockquote>
+				</p>
+
+				<div class="action">
+					 <%= link_to('Create Profile', new_contractor_registration_path, class: 'btn btn-primary btn-lg')  %>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
