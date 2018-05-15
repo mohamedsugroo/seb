@@ -28,8 +28,8 @@ if ( document.querySelector('.pageRegisterone') !== null ){
 	secondBtn.addEventListener('click', secondButton, false);
 
 	function babysteps() {
-		$('.contractor_address').removeClass('hidden')
-		$('.personal_info').addClass('hidden')
+		$('.contractor_address').removeClass('')
+		$('.personal_info').addClass('')
 
 	};
 
@@ -40,8 +40,8 @@ if ( document.querySelector('.pageRegisterone') !== null ){
 	// show the last div
 
 	function secondButton() {
-		$('.complete_sign_in_info').removeClass('hidden')
-		$('.contractor_address').addClass('hidden')
+		$('.complete_sign_in_info').removeClass('')
+		$('.contractor_address').addClass('')
 
 	};
 
@@ -61,8 +61,8 @@ if ( document.querySelector('.pageRegistertwo') !== null ){
 	
 
 	function secondPageCompany() {
-		$('.page_two_company').removeClass('hidden')
-		$('.page_one_company').addClass('hidden')
+		$('.page_two_company').removeClass('')
+		$('.page_one_company').addClass('')
 	};
 
 }

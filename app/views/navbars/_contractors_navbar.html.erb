@@ -1,4 +1,54 @@
-<h1> contractor_signed_in </h1>
+<!-- <nav class="navbar navbar-light bg-light"> -->
+<nav class="bg-white nav_white">
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3">
+				<a class="navbar-brand" href="#">
+					<img src="http://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+					Sebki
+				</a>
+
+			</div>
+			<div class="col-md-6">
+
+				<div class="input-group mb-3">
+				  <input type="text" class="form-control" placeholder="What ..." aria-label="What ..." aria-describedby="basic-addon2">
+
+				  <input type="text" class="form-control" placeholder="Where ..." aria-label="Where ..." aria-describedby="basic-addon2">
+
+
+				  <div class="input-group-append">
+				    <button class="btn btn-primary" type="button">
+				    	<i class="fa fa-search"></i>
+				    </button>
+				  </div>
+				</div>
+
+			</div>
+			<div class="col-md-3 text-align-right">
+				<div class="dropdown">
+				  <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    <p><%= current_contractor.fullname %></p>
+				    <div class="avatar_nav"></div>
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a class="dropdown-item" href="#">My Profile</a>
+				    <a class="dropdown-item" href="#">Another action</a>
+				    <a class="dropdown-item" href="#">Account Settings</a>
+				    <hr>
+				    <!-- <a class="dropdown-item" href="#">Sign Out</a> -->
+				    <%= link_to('Logout', class:"dropdown-item", destroy_contractor_session_path, method: :delete) %>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+
+
+
 <% if contractor_signed_in? %>
   <li>
 	  <%= link_to('Logout', destroy_contractor_session_path, method: :delete) %>
