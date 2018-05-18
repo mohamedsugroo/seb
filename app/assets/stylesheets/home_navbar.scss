@@ -1,0 +1,57 @@
+.home_navbar {
+
+
+  .core {
+    margin-top: -85px;
+  }
+
+  .bg-white {
+    background: none !important;
+    color:  white !important;
+  }
+
+  .text-dark {
+    margin-top: 2px;
+    color:  white !important;
+  }
+
+  .btn-left {
+    margin-left: 40px;
+  }
+
+  a.text-dark:focus, a.text-dark:hover {
+    color: #ffffff!important;
+    border-bottom:  2px solid white;
+  }
+
+
+  .search_box_input {
+    background: rgba(255, 255, 255, 0.97);
+    border: none;
+  }
+
+
+  .brand-logo {
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .brand-logo:hover {
+    color: #e4e4e4;
+    text-decoration: underline;
+  }
+
+
+  .sign_in:hover {
+    background: #ff9f43 ;
+    color: white;
+  }
+
+
+  .sign_up:hover {
+    background: #ee5253 ;
+    color: white;
+  }
+  
+
+}

@@ -8,12 +8,31 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% if current_page?(root_path) %>
+      <link rel="stylesheet" href="./simple.css">
+    <% end %>
+
   </head>
 
   <body class="">
 
-    <%= render 'navbars/navbar' %>
-    <%= yield %>
+    
+
+    <% if current_page?(root_path) %>
+      <div class="home_navbar">
+        <%= render 'navbars/home' %>
+        <%= yield %>
+      </div>
+    <% else %>
+
+      <%= render 'navbars/navbar' %>
+      <div class="page_wrapper">
+        <%= yield %>
+      </div>
+    <% end %>
+    
+    <%= render 'navbars/footer' %>
 
     
   </body>

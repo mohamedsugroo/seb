@@ -1,28 +1,20 @@
 class ContractorAprovalsController < ApplicationController
   before_action :set_contractor_aproval, only: [:show, :edit, :update, :destroy]
 
-  # GET /contractor_aprovals
-  # GET /contractor_aprovals.json
   def index
     @contractor_aprovals = ContractorAproval.all
   end
 
-  # GET /contractor_aprovals/1
-  # GET /contractor_aprovals/1.json
   def show
   end
 
-  # GET /contractor_aprovals/new
   def new
     @contractor_aproval = ContractorAproval.new
   end
 
-  # GET /contractor_aprovals/1/edit
   def edit
   end
 
-  # POST /contractor_aprovals
-  # POST /contractor_aprovals.json
   def create
     @contractor_aproval = ContractorAproval.new(contractor_aproval_params)
 
@@ -37,8 +29,6 @@ class ContractorAprovalsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /contractor_aprovals/1
-  # PATCH/PUT /contractor_aprovals/1.json
   def update
     respond_to do |format|
       if @contractor_aproval.update(contractor_aproval_params)
@@ -51,8 +41,6 @@ class ContractorAprovalsController < ApplicationController
     end
   end
 
-  # DELETE /contractor_aprovals/1
-  # DELETE /contractor_aprovals/1.json
   def destroy
     @contractor_aproval.destroy
     respond_to do |format|
@@ -62,13 +50,12 @@ class ContractorAprovalsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_contractor_aproval
       @contractor_aproval = ContractorAproval.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def contractor_aproval_params
-      params.require(:contractor_aproval).permit(:name, :admin_id, :note)
+      params.require(:contractor_aproval).permit(:name, :admin_id, :note, :contractor_id)
     end
 end

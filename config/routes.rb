@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'companydashboard/index'
-  get 'companydashboard/jobs'
-  get 'companydashboard/hired'
+  get 'companyprofile/index'
+  get 'companyprofile/show'
+  get '/companies', to: 'companydashboard#index'
+  get '/company/jobs', to:'companydashboard#jobs'
+  get '/company/hires', to:'companydashboard#hired'
+
   resources :contractor_aprovals
   resources :company_aprovals
   devise_for :admins

@@ -1,31 +1,118 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<h1>Company Aprovals</h1>
+  <div class="d-flex align-items-center p-3 text-white-50 bg-purple rounded box-shadow purple page-badge">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Admin</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="logo">
+    </div>
 
-  <tbody>
-    <% @company_aprovals.each do |company_aproval| %>
+    <div class="lh-100">
+      <h6 class="mb-0 text-white lh-100">Company Approvals</h6>
+      <small>From <%= time_ago_in_words(Time.now) %></small>
+    </div>
+  </div>
+
+  <table class="table table-hover">
+    <tbody>
+      <% @companies.each do |company| %>
       <tr>
-        <td><%= company_aproval.name %></td>
-        <td><%= company_aproval.admin_id %></td>
-        <td><%= company_aproval.note %></td>
-        <td><%= link_to 'Show', company_aproval %></td>
-        <td><%= link_to 'Edit', edit_company_aproval_path(company_aproval) %></td>
-        <td><%= link_to 'Destroy', company_aproval, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= company.email %> 
+        </td>
+        <td>
+
+          <div class="row">
+            <div class="col">
+              <% if !company.aprovals %>
+
+              <span class="badge-Pending">
+                  Pending
+                </span>
+              
+              <% else %>
+
+
+                <% company.aprovals.each do |ca| %>
+                  <% if ca == company.aprovals.last %>
+
+                    <% if ca.name? %>
+                      <span class="badge-<%= ca.name %>">
+                        <a href="<%= company_aproval_path(ca.id) %>" class="btn btn-light">
+                          <%= ca.name %>
+                        </a>
+                        
+                      </span>
+                    <% end %>
+                    
+                    
+                  <% end %>
+                <% end %>
+
+
+              <% end %>
+            </div>
+            <div class="col text-align-right">
+              <%= form_for @aprovals do |f| %>
+                <%= f.number_field :company_id, value: company.id, type: 'hidden' %>
+                <%= f.select :name , ['Approved', 'Suspended', 'Pending'], class:"select" %>
+                <%= f.submit "Update", class: 'btn btn-light' %>
+              <% end %>
+            </div>
+          </div>
+          
+
+          
+        </td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+</div>
 
-<%= link_to 'New Company Aproval', new_company_aproval_path %>
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <h1>Company Aprovals</h1>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Admin</th>
+        <th>Note</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @company_aprovals.each do |company_aproval| %>
+        <tr>
+          <td><%= company_aproval.name %></td>
+          <td><%= company_aproval.admin_id %></td>
+          <td><%= company_aproval.note %></td>
+          <td><%= link_to 'Show', company_aproval %></td>
+          <td><%= link_to 'Edit', edit_company_aproval_path(company_aproval) %></td>
+          <td><%= link_to 'Destroy', company_aproval, method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Company Aproval', new_company_aproval_path %>
+
+
+</div> -->

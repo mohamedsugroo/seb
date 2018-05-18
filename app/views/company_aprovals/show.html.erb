@@ -1,19 +1,38 @@
-<p id="notice"><%= notice %></p>
+<br> <br>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @company_aproval.name %>
-</p>
+<div class="row">
+	<div class="col-md-4">
+		
+		<div class="approval_card p-3">
+			<p id="notice"><%= notice %></p>
+			<p>
+			  <strong>Status</strong> <br>
+			  <%= @company_aproval.name %>
+			</p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @company_aproval.admin_id %>
-</p>
+			<p>
+			  <strong>Approved by</strong> <br>
+			  <%= @company_aproval.admin %>
+			</p>
 
-<p>
-  <strong>Note:</strong>
-  <%= @company_aproval.note %>
-</p>
+			<p>
+			  <strong>Note</strong> <br>
+			  <%= @company_aproval.note %>
+			</p>
 
-<%= link_to 'Edit', edit_company_aproval_path(@company_aproval) %> |
-<%= link_to 'Back', company_aprovals_path %>
+			<%= link_to 'Edit', edit_company_aproval_path(@company_aproval) %>
+			<%= link_to 'Back', company_aprovals_path %>
+		</div>
+
+	</div>
+	<div class="col-md-6">
+		hello
+
+	</div>
+
+</div>
+	
+
+
+</div>

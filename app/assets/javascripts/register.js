@@ -1,17 +1,10 @@
 $(document).on('turbolinks:load', function() {
 
-
-
 // contractor
 
 	// initialize variables
 
 	var firstButton, secondBtn, secBtn;
-
-	
-
-	
-
 
 	// first button #contine_to_address
 	// first div #contractor_address
@@ -28,8 +21,8 @@ if ( document.querySelector('.pageRegisterone') !== null ){
 	secondBtn.addEventListener('click', secondButton, false);
 
 	function babysteps() {
-		$('.contractor_address').removeClass('')
-		$('.personal_info').addClass('')
+		$('.contractor_address').removeClass('hidde-input')
+		$('.personal_info').addClass('hidde-input')
 
 	};
 
@@ -40,15 +33,13 @@ if ( document.querySelector('.pageRegisterone') !== null ){
 	// show the last div
 
 	function secondButton() {
-		$('.complete_sign_in_info').removeClass('')
-		$('.contractor_address').addClass('')
+		$('.complete_sign_in_info').removeClass('hidde-input')
+		$('.contractor_address').addClass('hidde-input')
 
 	};
 
 
 }
-
-
 
 
 if ( document.querySelector('.pageRegistertwo') !== null ){
@@ -61,8 +52,8 @@ if ( document.querySelector('.pageRegistertwo') !== null ){
 	
 
 	function secondPageCompany() {
-		$('.page_two_company').removeClass('')
-		$('.page_one_company').addClass('')
+		$('.page_two_company').removeClass('hidde-input')
+		$('.page_one_company').addClass('hidde-input')
 	};
 
 }
