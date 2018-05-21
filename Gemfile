@@ -18,9 +18,10 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'devise'
 
 
-# group :production do 
+group :production do 
   # gem 'pg'
-# end
+  gem "passenger"
+end
 
 
 group :development, :test do
