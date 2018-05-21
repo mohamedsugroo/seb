@@ -1,5 +1,25 @@
 # postgreSQL SERVER
 
+
+production:
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  adapter: postgresql
+  database: sebki_production
+  <% if Rails.application.secrets[:database].present? %>
+    host: <%= Rails.application.secrets[:database][:host]%>
+    username: <%= Rails.application.secrets[:database][:username]%>
+    password: <%= Rails.application.secrets[:database][:password]%>
+  <% end %>
+  port: 5432
+
+
+
+
+
+
+
 # development:
 #   adapter: postgresql
 #   encoding: unicode
@@ -20,12 +40,18 @@
 #   port: 5432
 
 
+
+
+
+
 # # SQLite version 3.x
 # #   gem install sqlite3
 # #
 # #   Ensure the SQLite 3 gem is defined in your Gemfile
 # #   gem 'sqlite3'
 # #
+
+
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -38,12 +64,13 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+
 test:
   <<: *default
   database: db/test.sqlite3
 
-production:
-  <<: *default
-  database: db/production.sqlite3
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
 
 

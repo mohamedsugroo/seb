@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_05_17_064947) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -87,11 +84,11 @@ ActiveRecord::Schema.define(version: 2018_05_17_064947) do
     t.string "city"
     t.string "country"
     t.string "mobile"
+    t.decimal "preferred_hourly_rate"
     t.string "uref"
     t.boolean "right_to_work_uk"
     t.text "bio"
     t.date "dob"
-    t.decimal "preferred_hourly_rate"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
