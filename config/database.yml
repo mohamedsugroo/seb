@@ -1,18 +1,18 @@
 # postgreSQL SERVER
 
 
-production:
-  pool: 5
-  timeout: 5000
-  encoding: utf8
-  adapter: postgresql
-  database: sebki_production
-  <% if Rails.application.secrets[:database].present? %>
-    host: <%= Rails.application.secrets[:database][:host]%>
-    username: <%= Rails.application.secrets[:database][:username]%>
-    password: <%= Rails.application.secrets[:database][:password]%>
-  <% end %>
-  port: 5432
+# production:
+#   pool: 5
+#   timeout: 5000
+#   encoding: utf8
+#   adapter: postgresql
+#   database: sebki_production
+#   <% if Rails.application.secrets[:database].present? %>
+#     host: <%= Rails.application.secrets[:database][:host]%>
+#     username: <%= Rails.application.secrets[:database][:username]%>
+#     password: <%= Rails.application.secrets[:database][:password]%>
+#   <% end %>
+#   port: 5432
 
 
 
@@ -69,8 +69,8 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-# production:
-#   <<: *default
-#   database: db/production.sqlite3
+production:
+  <<: *default
+  database: db/production.sqlite3
 
 

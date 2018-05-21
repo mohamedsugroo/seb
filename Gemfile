@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.0'
 gem 'puma', '~> 3.11'
+gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
@@ -17,13 +18,12 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'devise'
 
 
-group :production do 
-  gem 'pg'
-end
+# group :production do 
+  # gem 'pg'
+# end
 
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
