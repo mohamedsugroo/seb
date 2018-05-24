@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_17_064947) do
+ActiveRecord::Schema.define(version: 2018_05_24_184801) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 2018_05_17_064947) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "companies", force: :cascade do |t|
@@ -61,6 +67,15 @@ ActiveRecord::Schema.define(version: 2018_05_17_064947) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "company_id"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.integer "job_id"
+    t.string "phone_number"
+    t.string "first_line"
+    t.string "post_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contractor_aprovals", force: :cascade do |t|
@@ -101,6 +116,20 @@ ActiveRecord::Schema.define(version: 2018_05_17_064947) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_contractors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_contractors_on_reset_password_token", unique: true
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "job_sector"
+    t.decimal "hourly_rate"
+    t.string "payment_method"
+    t.string "payment_date"
+    t.decimal "number_of_hours"
+    t.integer "company_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

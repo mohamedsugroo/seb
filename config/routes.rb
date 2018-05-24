@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :jobs
+  resources :contacts
+  resources :categories
   # Contractor Dashboard
   get 'contractorprofile/index'
   get 'contractorprofile/show'

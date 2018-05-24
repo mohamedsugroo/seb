@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @job.description %>
+</p>
+
+<p>
+  <strong>Job sector:</strong>
+  <%= @job.job_sector %>
+</p>
+
+<p>
+  <strong>Hourly rate:</strong>
+  <%= @job.hourly_rate %>
+</p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @job.payment_method %>
+</p>
+
+<p>
+  <strong>Payment date:</strong>
+  <%= @job.payment_date %>
+</p>
+
+<p>
+  <strong>Number of hours:</strong>
+  <%= @job.number_of_hours %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @job.company_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @job.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
