@@ -22,7 +22,8 @@
 .avatar {
 	width: 150px;
 	height: 150px;
-	background: white;
+	background: #007aff;
+    border-radius: 3px
 }
 
 .thin {
@@ -38,8 +39,14 @@
 	.item{
 		list-style: none;
 		display: inline-block;
-		margin: 8px;
-		padding: 12px;
+		margin: 14px;
+		padding: 8px;
+		cursor: pointer;
+
+		&:hover {
+			border-radius: 3px;
+			background-color: #f1f1f1f1;
+		}
 	}
 }
 
@@ -48,6 +55,8 @@
 	width: 700px;
 	// background: red;
 	margin: 0 auto;
+	// border: 1px solid red;
+	padding: 12px;
 
 	.jobs_item {
 		padding: 0;

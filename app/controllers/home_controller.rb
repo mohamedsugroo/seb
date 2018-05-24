@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   	if contractor_signed_in?
   		redirect_to contractorprofile_index_url
   	elsif company_signed_in?
-  		redirect_to my_dash_url
+  		redirect_to dashboard_url
   	end
 
   end

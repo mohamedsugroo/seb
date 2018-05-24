@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'contractorprofile/show'
 
   # Company Dashboard
-  get '/my_dash', to:'companyprofile#index'
+  get '/dashboard', to:'companyprofile#index'
   get 'companyprofile/show'
 
   # Companies List
