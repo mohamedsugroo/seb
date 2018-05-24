@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'companyprofile/index'
+  # Contractor Dashboard
+  get 'contractorprofile/index'
+  get 'contractorprofile/show'
+
+  # Company Dashboard
+  get '/my_dash', to:'companyprofile#index'
   get 'companyprofile/show'
+
+  # Companies List
   get '/companies', to: 'companydashboard#index'
   get '/company/jobs', to:'companydashboard#jobs'
   get '/company/hires', to:'companydashboard#hired'
