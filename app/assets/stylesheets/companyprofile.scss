@@ -1,3 +1,96 @@
-// Place all the styles related to the companyprofile controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.company_profile_info {
+	height: 250px;
+	width: 100%;
+	margin-top: -18px;
+
+
+	.info {
+		padding-top: 30px;
+		// background: green;
+		text-align: center;
+		margin-top: 8px;
+		padding-bottom: 30px;
+	}
+}
+
+
+.company_profile {
+	padding-top: 50px;
+	// background: red;
+}
+
+.avatar {
+	width: 150px;
+	height: 150px;
+	background: white;
+}
+
+.thin {
+	font-weight: 300;
+}
+
+
+.link_items {
+	padding: 0;
+	text-align: center;
+	border-bottom: 1px solid #f1f1f1f1;
+
+	.item{
+		list-style: none;
+		display: inline-block;
+		margin: 8px;
+		padding: 12px;
+	}
+}
+
+
+.jobs_list_company {
+	width: 700px;
+	// background: red;
+	margin: 0 auto;
+
+	.jobs_item {
+		padding: 0;
+		.items {
+			list-style: none;
+			padding: 22px;
+			padding-bottom: 10px;
+			cursor: pointer;
+
+			&:hover {
+				background: #f8f9fa;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			.job_status {
+				font-weight: 300;
+			    font-size: 9pt;
+				background: #f8f9fa;
+			    padding: 3px;
+				border-radius: 3px;
+			}
+
+			.active_job {
+				background: #1dd1a1;
+				color: white;
+			}
+
+			h4 {
+				font-size: 18px;
+			}
+
+			p {
+				font-size: 11pt;
+			}
+
+			.job_sumary {
+				font-weight: 300;
+				padding-top: 10px;
+			}
+		}
+	}
+}
