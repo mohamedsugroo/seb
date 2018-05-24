@@ -1,0 +1,45 @@
+# postgreSQL SERVER
+
+
+# production:
+#   pool: 5
+#   timeout: 5000
+#   encoding: utf8
+#   adapter: postgresql
+#   database: sebki_production
+#   <% if Rails.application.secrets[:database].present? %>
+#     host: <%= Rails.application.secrets[:database][:host]%>
+#     username: <%= Rails.application.secrets[:database][:username]%>
+#     password: <%= Rails.application.secrets[:database][:password]%>
+#   <% end %>
+#   port: 5432
+
+
+
+
+
+
+
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: sebki_development
+#   username: <%= ENV.fetch("DB_USERNAME")%>
+#   password: <%= ENV.fetch("DB_PASSWORD")%>
+#   host: <%= ENV.fetch("DB_HOST_URL")%>
+#   port: 5432
+
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: sebki_production
+#   username: <%= ENV.fetch("DB_USERNAME")%>
+#   password: <%= ENV.fetch("DB_PASSWORD")%>
+#   host: <%= ENV.fetch("DB_HOST_URL")%>
+#   port: 5432
+
+
+
+
+
