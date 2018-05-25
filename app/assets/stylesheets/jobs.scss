@@ -1,3 +1,66 @@
-// Place all the styles related to the jobs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.job_info_create {
+	width: 600px;
+	padding-top: 30px;
+}
+
+
+.center {
+	margin: 0 auto;
+}
+
+.field {
+	margin-bottom: 20px;
+}
+
+.form-nav-custom {
+	margin-top: 80px;
+	margin-bottom: 30px;
+
+	.fm {
+		border-bottom: 3px solid #bdc3c7;
+		color: #bdc3c7;
+	}
+	.fm-done{
+		border-color: #3498db;
+		color: #34495e;
+	}
+
+	.nav-item {
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 10px;
+	}
+
+	.nav-item:first-child {
+		border-top-left-radius: 2px;
+		border-bottom-left-radius: 1px;
+		padding-left: 55px;
+	}
+
+	.nav-item:last-child {
+		border-top-left-radius: 2px;
+		border-bottom-left-radius: 1px;
+		padding-right: 55px;
+	}
+
+}
+
+
+.align-end {
+	text-align: right;
+}
+
+.red {
+	background: red
+}
+
+
+.form-card {
+	padding-top: 50px;
+
+	h5.card-title {
+		padding: 0;
+		margin: 0;
+	}
+
+}

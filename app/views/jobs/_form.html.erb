@@ -1,3 +1,5 @@
+<div class="jobForm">
+
 <%= form_with(model: job, local: true) do |form| %>
   <% if job.errors.any? %>
     <div id="error_explanation">
@@ -11,80 +13,138 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control' %>
+
+  <div class="job_info_create center">
+
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control form-control-lg' %>
+      <small class="form-text text-muted">This will be used to find your job post make it as discriptive as posible.</small>
+
+
+
+    </div>
+
+    <div class="field">
+      <%= form.label :sector %>
+      <%= form.select :job_sector,
+        [
+          'Door Supervision',
+          'Close Protection',
+          'Cash and Valuables in Transit',
+          'Public Space Surveillance (CCTV)',
+          'Security Guarding',
+          'Vehicle Immobilising',
+          'Key Holding'
+        ], class: 'form-control form-control-lg' 
+      %>
+
+      <small class="form-text text-muted">
+        Please make sure you select the correct sector.
+      </small>
+
+    </div>
+
+    <div class="align-end">
+      <label class="btn btn-primary btn-lg jic">Continue</label>
+    </div>
+
+  </div> 
+  <!-- End jobs_info_create -->
+
+
+  <div class="jobs_hours_and_payment hidde-input">
+
+    <div class="row">
+      <div class="col">
+
+
+
+        <div class="field">
+          <%= form.label :hourly_rate %>
+          <%= form.number_field :hourly_rate, class: 'form-control form-control-lg',
+          value: 0.00, 'ng-model':'hourly_rate' %>
+        </div>
+
+        <div class="field">
+          <%= form.label :number_of_hours %>
+          <%= form.number_field :number_of_hours, class: 'form-control form-control-lg', value: 0.00, 'ng-model':'number_of_hours' %>
+        </div>
+
+        <div class="field">
+          <%= form.label :payment_method %>
+          <%= form.select :payment_method,
+            [
+              'Cash',
+              'Paycheck',
+              'Direct deposit'
+            ], class: 'form-control', 'ng-model':'payment_method'
+          %>
+        </div>
+
+        <div class="field">
+          <%= form.label :payment_date %>
+          <%= form.select :payment_date,
+            [
+              'Same Day',
+              '1 Week',
+              '2 Weeks',
+              '3 Weeks',
+              '1 Month'
+            ], class: 'form-control', 'ng-model':'payment_date'
+          %>
+        </div>
+
+
+        <div class="align-end">
+          <label class="btn btn-primary btn-lg jhap">Continue</label>
+        </div>
+
+      </div>
+      
+      <div class="col">
+
+        <%= render 'home/formCard' %>
+
+      </div>
+
+    </div>
+
+  </div> <!-- End jobs_hours_and_payment -->
+
+
+  <div class="jobs_category hidde-input">
+
+
+    <div class="field">
+      <%= form.label :category_id %>
+      <%= form.number_field :category_id, class: 'form-control form-control-lg' %>
+    </div>
+
+    <div class="align-end">
+      <label class="btn btn-primary btn-lg jc">Continue</label>
+    </div>
+    
   </div>
+  <!-- End jobs_category -->
 
-  <div class="field">
-    <%= form.label :job_sector %>
-    <%= form.select :job_sector,
-      [
-        'Door Supervision',
-        'Close Protection',
-        'Cash and Valuables in Transit',
-        'Public Space Surveillance (CCTV)',
-        'Security Guarding',
-        'Vehicle Immobilising',
-        'Key Holding'
-      ], class: 'form-control' 
-    %>
+  <div class="jobs_description hidde-input">
+    
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: 'form-control form-control-lg' %>
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit 'Post Job', class: 'btn btn-primary' %>
+    </div>
+  
   </div>
-
-  <div class="field">
-    <%= form.label :hourly_rate %>
-    <%= form.text_field :hourly_rate, class: 'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :payment_method %>
-    <%= form.select :payment_method,
-      [
-        'Cash',
-        'Paycheck',
-        'Direct deposit'
-      ], class: 'form-control' 
-    %>
-  </div>
-
-  <div class="field">
-    <%= form.label :payment_date %>
-    <%= form.select :payment_date,
-      [
-        'Same Day',
-        '1 Week',
-        '2 Weeks',
-        '3 Weeks',
-        '1 Month'
-      ], class: 'form-control' 
-    %>
-  </div>
-
-  <div class="field">
-    <%= form.label :number_of_hours %>
-    <%= form.text_field :number_of_hours, class: 'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company_id %>
-    <%= form.number_field :company_id, class: 'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.number_field :category_id, class: 'form-control' %>
-  </div>
+  <!-- End jobs_description -->
 
 
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, class: 'form-control' %>
-  </div>
-
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  
 <% end %>
+
+</div>

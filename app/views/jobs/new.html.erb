@@ -1,9 +1,24 @@
 <div class="container">
-	<h4>New Job</h4>
+	<!-- <h4>New Job</h4> -->
+
+	<ul class="nav justify-content-center form-nav-custom">
+		<li class="nav-item fm fm-done">
+			Title and Sector
+		</li>
+		<li class="nav-item hp fm">
+			Hours and Payment
+		</li>
+		<li class="nav-item cat fm">
+			Category
+		</li>
+		<li class="nav-item desc fm">
+			Description
+		</li>
+	</ul>
 
 	<%= render 'form', job: @job %>
 
-	<%= link_to 'Back', jobs_path %>
+	<%#= link_to 'Back', jobs_path %>
 
 
 </div>
