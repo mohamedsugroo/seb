@@ -62,6 +62,62 @@ $(document).on('turbolinks:load', function() {
 		
 
 
+		$( "#job_job_sector" ).change(function() {
+			var valv = $('#job_job_sector').val();
+			console.log(valv);
+			$('.job_job_sector_show').html(valv)
+
+		});
+
+
+
+		$( "#job_hourly_rate" ).change(function() {
+			var valv = $('#job_hourly_rate').val();
+			console.log(valv);
+
+			if ( valv > -1 ) {
+				$('.hourly_rate_prev').html("£" + valv)
+			} else {
+				$('.hourly_rate_prev').html("N/A")
+			}
+
+			cost();
+
+		});
+
+
+
+		$( "#job_number_of_hours" ).change(function() {
+			var valv = $('#job_number_of_hours').val();
+			console.log(valv);
+			
+
+			if ( valv > -1 ) {
+				$('.number_of_hours_prev').html(valv + "Hrs")
+			} else {
+				$('.number_of_hours_prev').html("N/A")
+			}
+
+			cost();
+
+		});
+
+
+
+		function cost() {
+			var first_value = $('#job_number_of_hours').val();
+			var second_value = $('#job_number_of_hours').val();
+
+			var cost = first_value * second_value;
+
+			$('.job_cost_prev').html("£" + cost.toFixed(2));
+			console.log("cost = " + cost.toFixed(2))
+
+
+		}
+		
+
+
 		// job_info_create
 
 

@@ -1,1 +1,0 @@
-var sebki = angular.module('sebki', []);

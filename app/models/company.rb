@@ -5,6 +5,7 @@ class Company < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :company_aprovals
+  has_many :jobs
 
   def aprovals
   	self.company_aprovals
