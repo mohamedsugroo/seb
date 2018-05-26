@@ -2,9 +2,13 @@
   <div class="card">
     <div class="card-body">
 
-      <h5 class="card-title job_title"></h4>
+      <h5 class="card-title job_title">No Title</h4>
       <p class="card-text thin">
-        <strong>London City Security Ltd</strong> <br>
+        <% if company_signed_in? %>
+          
+        <strong><%= current_company.name %></strong> <br>
+        <% end %>
+
         <strong>Payment Methode</strong> <br>
         <span class="payment_method"> Cash </span> | 
         <span class="payment_date"> Same Day </span>
@@ -14,15 +18,15 @@
 
       <div class="row">
         <div class="col text-align-center">
-          <h4 class="thin">{{ hourly_rate | currency : '£'}}</h4>
+          <h4 class="thin">£00.00</h4>
           <h6 class="thin">Hourly rate</h6>
         </div>
         <div class="col text-align-center">
-          <h4 class="thin">{{ number_of_hours }}</h4>
+          <h4 class="thin">0hrs</h4>
           <h6 class="thin">Number of hours</h6>
         </div>
         <div class="col text-align-center">
-          <h4 class="thin">{{ hourly_rate * number_of_hours | currency : '£'}}</h4>
+          <h4 class="thin">£ 00.00</h4>
           <h6 class="thin">Cost</h6>
         </div>
       </div>

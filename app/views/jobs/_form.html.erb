@@ -63,12 +63,12 @@
         <div class="field">
           <%= form.label :hourly_rate %>
           <%= form.number_field :hourly_rate, class: 'form-control form-control-lg',
-          value: 0.00, 'ng-model':'hourly_rate' %>
+          value: 0.00 %>
         </div>
 
         <div class="field">
           <%= form.label :number_of_hours %>
-          <%= form.number_field :number_of_hours, class: 'form-control form-control-lg', value: 0.00, 'ng-model':'number_of_hours' %>
+          <%= form.number_field :number_of_hours, class: 'form-control form-control-lg', value: 0.00 %>
         </div>
 
         <div class="field">
@@ -78,7 +78,7 @@
               'Cash',
               'Paycheck',
               'Direct deposit'
-            ], class: 'form-control', 'ng-model':'payment_method'
+            ], class: 'form-control'
           %>
         </div>
 
@@ -91,7 +91,7 @@
               '2 Weeks',
               '3 Weeks',
               '1 Month'
-            ], class: 'form-control', 'ng-model':'payment_date'
+            ], class: 'form-control'
           %>
         </div>
 

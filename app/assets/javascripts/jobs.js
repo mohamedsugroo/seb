@@ -1,101 +1,104 @@
+$(document).on('turbolinks:load', function() {
 
-$("select").addClass("custom-select");
-
-
-if ( document.querySelector('.jobForm') !== null ){
-	console.log("Form Active");
-	$("select").addClass("form-control-lg");
+	$("select").addClass("custom-select");
 
 
-	var jic,jhap,jc,jdesc,btnJic,btnJhap,btnJc;
-
-	// div's
-	jic = document.querySelector('.job_info_create');
-	jhap = document.querySelector('.jobs_hours_and_payment');
-	jc = document.querySelector('.jobs_category');
-	jdesc = document.querySelector('.jobs_description');
-
-	// button's
-
-	btnJic = document.querySelector('.jic');
-	btnJhap = document.querySelector('.jhap');
-	btnJc = document.querySelector('.jc');
+	if ( document.querySelector('.jobForm') !== null ){
+		console.log("Form Active");
+		$("select").addClass("form-control-lg");
 
 
-	// event's
+		var jic,jhap,jc,jdesc,btnJic,btnJhap,btnJc;
 
-	btnJic.addEventListener('click', TandS, false);
-	btnJhap.addEventListener('click', HandP, false);
-	btnJc.addEventListener('click', jobsCat, false);
+		// div's
+		jic = document.querySelector('.job_info_create');
+		jhap = document.querySelector('.jobs_hours_and_payment');
+		jc = document.querySelector('.jobs_category');
+		jdesc = document.querySelector('.jobs_description');
 
+		// button's
 
-	// function's
-
-
-
-	// show inputs
-
-	$( "#job_title" ).change(function() {
-		var valv = $('#job_title').val();
-		console.log(valv);
-		$('.job_title').html(valv)
-
-	});
-
-	$( "#job_payment_method" ).change(function() {
-		var valv = $('#job_payment_method').val();
-		console.log(valv);
-		$('.payment_method').html(valv)
-
-	});
+		btnJic = document.querySelector('.jic');
+		btnJhap = document.querySelector('.jhap');
+		btnJc = document.querySelector('.jc');
 
 
-	$( "#job_payment_date" ).change(function() {
-		var valv = $('#job_payment_date').val();
-		console.log(valv);
-		$('.payment_date').html(valv)
+		// event's
 
-	});
-
-
-	
+		btnJic.addEventListener('click', TandS, false);
+		btnJhap.addEventListener('click', HandP, false);
+		btnJc.addEventListener('click', jobsCat, false);
 
 
-	// job_info_create
+		// function's
 
 
-	function TandS() {
-		$(".job_info_create").addClass("hidde-input");
-		$(".jobs_hours_and_payment").removeClass("hidde-input");
-		$(".hp").addClass("fm-done");
+
+		// show inputs
+
+		$( "#job_title" ).change(function() {
+			var valv = $('#job_title').val();
+			console.log(valv);
+			$('.job_title').html(valv)
+
+		});
+
+		$( "#job_payment_method" ).change(function() {
+			var valv = $('#job_payment_method').val();
+			console.log(valv);
+			$('.payment_method').html(valv)
+
+		});
+
+
+		$( "#job_payment_date" ).change(function() {
+			var valv = $('#job_payment_date').val();
+			console.log(valv);
+			$('.payment_date').html(valv)
+
+		});
+
+
 		
-	}
 
 
-	// jobs_hours_and_payment
-	
-
-	function HandP() {
-		$(".jobs_hours_and_payment").addClass("hidde-input");
-		$(".jobs_category").removeClass("hidde-input");
-
-		$(".cat").addClass("fm-done");
-	}
-
-	// jobs_category
-
-	function jobsCat() {
-		$(".jobs_category").addClass("hidde-input");
-		$(".jobs_description").removeClass("hidde-input");
-		$(".desc").addClass("fm-done");
-
-	}
+		// job_info_create
 
 
-	// jobs_description
+		function TandS() {
+			$(".job_info_create").addClass("hidde-input");
+			$(".jobs_hours_and_payment").removeClass("hidde-input");
+			$(".hp").addClass("fm-done");
+			
+		}
 
-	function description() {
 
-	}
+		// jobs_hours_and_payment
+		
 
-};
+		function HandP() {
+			$(".jobs_hours_and_payment").addClass("hidde-input");
+			$(".jobs_category").removeClass("hidde-input");
+
+			$(".cat").addClass("fm-done");
+		}
+
+		// jobs_category
+
+		function jobsCat() {
+			$(".jobs_category").addClass("hidde-input");
+			$(".jobs_description").removeClass("hidde-input");
+			$(".desc").addClass("fm-done");
+
+		}
+
+
+		// jobs_description
+
+		function description() {
+
+		}
+
+	};
+
+});
