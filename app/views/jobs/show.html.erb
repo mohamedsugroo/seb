@@ -53,87 +53,92 @@
 
   <div class="col">
 
-    <% if @job.contacts.size > 0 %>
-      <div class="alert alert-success" role="alert">
-    <% else %>
-      <div class="alert alert-danger" role="alert">
-    <% end %>
-      Please go through this to do List to Complete your job Post.
-      <br> <br>
+    <% if company_signed_in? %>
+      <% if @job.company_id == current_company.id %>
 
 
-      <ul class="list-group mb-3">
-      
-        <% if company_signed_in? %>
 
-          <% if @job.contacts.size > 0 %>
-
-            <li class="bg-notice-done list-group-item d-flex justify-content-between lh-condensed" >
-              <div>
-                <h6 class="my-0">Address</h6>
-                <small class="text-muted"> This job will not be displayed unless you provide an address. </small>
-              </div>
-              <span class="text-muted">
-                Done 
-                <i class="fas fa-check-circle"></i>
-              </span>
-            </li>
-
-          <% else %>
-
-            <li class="bg-notice-red list-group-item d-flex justify-content-between lh-condensed" data-toggle="modal" data-target="#newAddress" data-whatever="@mdo" >
-              <div>
-                <h6 class="my-0">Address</h6>
-                <small class="text-muted"> This job will not be displayed unless you provide an address. </small>
-              </div>
-              <span class="text-muted">
-                Important <i class="fas fa-times-circle"></i>
-              </span>
-            </li>
-
-          <% end %>
-
+        <% if @job.contacts.size > 0 %>
+          <div class="alert alert-success" role="alert">
+        <% else %>
+          <div class="alert alert-danger" role="alert">
         <% end %>
+          Please go through this to do List to Complete your job Post.
+          <br> <br>
+
+
+          <ul class="list-group mb-3">
+          
+            
+                <% if @job.contacts.size > 0 %>
+
+                  <li class="bg-notice-done list-group-item d-flex justify-content-between lh-condensed" >
+                    <div>
+                      <h6 class="my-0">Address</h6>
+                      <small class="text-muted"> This job will not be displayed unless you provide an address. </small>
+                    </div>
+                    <span class="text-muted">
+                      Done 
+                      <i class="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+
+                <% else %>
+
+                  <li class="bg-notice-red list-group-item d-flex justify-content-between lh-condensed" data-toggle="modal" data-target="#newAddress" data-whatever="@mdo" >
+                    <div>
+                      <h6 class="my-0">Address</h6>
+                      <small class="text-muted"> This job will not be displayed unless you provide an address. </small>
+                    </div>
+                    <span class="text-muted">
+                      Important <i class="fas fa-times-circle"></i>
+                    </span>
+                  </li>
+
+                <% end %>
 
 
 
 
 
 
-          <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <div>
-              <h6 class="my-0">Requirements</h6>
-              <small class="text-muted">Please add a Job requirement ( optional ).</small>
-            </div>
-            <span class="text-muted">
-              Not Provided <i class="fas fa-times-circle"></i>
-            </span>
-          </li>
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">Requirements</h6>
+                  <small class="text-muted">Please add a Job requirement ( optional ).</small>
+                </div>
+                <span class="text-muted">
+                  Not Provided <i class="fas fa-times-circle"></i>
+                </span>
+              </li>
 
-          <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <div>
-              <h6 class="my-0">Responsibilities</h6>
-              <small class="text-muted">Please add a Job Responsibilities ( optional ).</small>
-            </div>
-            <span class="text-muted">
-              Not Provided <i class="fas fa-times-circle"></i>
-            </span>
-          </li>
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">Responsibilities</h6>
+                  <small class="text-muted">Please add a Job Responsibilities ( optional ).</small>
+                </div>
+                <span class="text-muted">
+                  Not Provided <i class="fas fa-times-circle"></i>
+                </span>
+              </li>
 
-      </ul>
+          </ul>
 
-
-    </div>
+        </div>
+      <% end %>
+    <% end %>
 
     <div class="contacts_modal">
       <%= render 'jobs/modal' %>
     </div>
 
 
-    <h3> <%= @job.title %> </h3>
+    <h3> <%= @job.title %> </h3> <br>
     <div><%= @job.description.html_safe %></div>
 
   </div>
+
+
 </div>
   
 
