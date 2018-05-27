@@ -1,43 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<h1>Jobs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Job sector</th>
-      <th>Hourly rate</th>
-      <th>Payment method</th>
-      <th>Payment date</th>
-      <th>Number of hours</th>
-      <th>Company</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="jobs_list_company">
+    <ul class="jobs_item">
 
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.description %></td>
-        <td><%= job.job_sector %></td>
-        <td><%= job.hourly_rate %></td>
-        <td><%= job.payment_method %></td>
-        <td><%= job.payment_date %></td>
-        <td><%= job.number_of_hours %></td>
-        <td><%= job.company_id %></td>
-        <td><%= job.category_id %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% @jobs.each do |job| %>
+        
+        <li class="items">
+          <a href="<%= job_path(job) %>">
+            <h4 class="job_title">
+              <%= job.title %>
+              <label class="job_status active_job_green">Active</label>
+            </h4>
+            <span class="job_company thin">
+              <%= job.company.name%>
+            </span> | 
+            <span class="job_location thin">London</span> | 
+            <span class="job_date thin"><%= time_ago_in_words(job.created_at) %></span> <br>
+            <strong class="thin">Payment Method | </strong> 
+            <span class="job_hourly_rate thin"> £ <%= job.hourly_rate %> an hour </span> | 
+            <span class="payment_method thin">
+              <%= job.payment_method %>
+            </span>  |
+            <span class="payment_date thin">
+              <%= job.payment_date %>
+            </span>   
+            <!-- <hr> -->
+            <p class="job_sumary">
+              Must hold a valid Front Line Door Supervisors SIA License*. Premium Security Services is a well respected and recognized brand. London, Greater London....
+            </p>
+          </a>
+        </li>
+
+      <% end %>
+
+
+    </ul>
+  </div>
 
 <br>
 
 <%= link_to 'New Job', new_job_path %>
+
+
+</div>

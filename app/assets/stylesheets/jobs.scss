@@ -3,6 +3,14 @@
 	padding-top: 30px;
 }
 
+.side_info {
+
+	h5 {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+}
 
 .center {
 	margin: 0 auto;
@@ -73,4 +81,12 @@
 
 .jobs_description {
     width: 70%;
+}
+
+
+.side_info {
+	.card {
+		border: none !important;
+		border-radius: 0 !important;
+	}
 }

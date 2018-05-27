@@ -1,0 +1,34 @@
+<div class="new_register hidden">
+        <div class="bg-ng" id="new_register_exit"> hh</div>
+
+        <div class="new_register_box_options">
+          <div class="row">
+            <div class="col ng-company bg-primary text-white">
+              
+              <h3>Company Profile</h3>
+
+              <p>
+                Creating a company profile will give you the ability to post jobs.note company profile is suitable for companies who wish to post jobs only. <br> <br>
+                Companies are not allowed to bid on jobs as the biding system is strictly for individual contractors
+              </p>
+
+              <a href="<%= new_company_registration_path %>" class="new_contractor_btn btn btn-light btn-lg">Create Profile</a>
+
+            </div>
+            <div class="col ng-contractor">
+
+              <h3>Contractor Profile</h3>
+
+              <p>
+                Creating a personal profile will give you the ability to bid on any given job. 
+                <br><br>
+                ( personal profile is suitable for security guards. please note by creating a personal profile you will not be able to post jobs )
+              </p>
+
+              <a href="<%= new_contractor_registration_path %>" class="new_contractor_btn btn btn-primary btn-lg">Create Profile</a>
+
+            </div>
+          </div>
+        </div>
+        
+      </div>

@@ -62,12 +62,12 @@
 
         <div class="field">
           <%= form.label :hourly_rate %>
-          <%= form.number_field :hourly_rate, class: 'form-control form-control-lg', value: 0.00 %>
+          <%= form.number_field :hourly_rate, class: 'form-control form-control-lg' %>
         </div>
 
         <div class="field">
           <%= form.label :number_of_hours %>
-          <%= form.number_field :number_of_hours, class: 'form-control form-control-lg', value: 0.00 %>
+          <%= form.number_field :number_of_hours, class: 'form-control form-control-lg' %>
         </div>
 
         <div class="field">
@@ -136,7 +136,7 @@
 
 
     <div class="actions">
-      <%= form.submit 'Post Job', class: 'btn btn-primary' %>
+      <%= form.button :submit, class: 'btn btn-primary' %>
     </div>
   
   </div>

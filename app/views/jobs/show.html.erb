@@ -1,49 +1,125 @@
-<p id="notice"><%= notice %></p>
+<br><br>
 
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
+<div class="container side_info">
+<div class="row">
+  <div class="col-md-4">
 
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
+    <div class="card p-4 bg-light ">
 
-<p>
-  <strong>Job sector:</strong>
-  <%= @job.job_sector %>
-</p>
+    <p>
+      <strong>Job sector</strong> <br>
+      <%= @job.job_sector %>
+    </p>
 
-<p>
-  <strong>Hourly rate:</strong>
-  <%= @job.hourly_rate %>
-</p>
+    <p>
+      <strong>Hourly rate</strong> <br>
+      <%= number_to_currency(@job.hourly_rate, unit: "£") %>
+    </p>
 
-<p>
-  <strong>Payment method:</strong>
-  <%= @job.payment_method %>
-</p>
+    <p>
+      <strong>Payment method </strong> <br>
+      <%= @job.payment_method %>
+    </p>
 
-<p>
-  <strong>Payment date:</strong>
-  <%= @job.payment_date %>
-</p>
+    <p>
+      <strong>Number of hours:</strong> <br>
+      <%= @job.number_of_hours %>
+    </p>
 
-<p>
-  <strong>Number of hours:</strong>
-  <%= @job.number_of_hours %>
-</p>
+    <p>
+      <strong>Payment date </strong> <br>
+      <%= @job.payment_date %>
+    </p>
 
-<p>
-  <strong>Company:</strong>
-  <%= @job.company_id %>
-</p>
+    
 
-<p>
-  <strong>Category:</strong>
-  <%= @job.category_id %>
-</p>
+    <p>
+      <strong>Company:</strong> <br>
+      <%= @job.company.name %>
+    </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+    <p>
+      <strong>Category</strong> <br>
+      
+    </p>
+
+    <div>
+      <button class="new_bid btn btn-primary btn-lg">Submit a Proposal</button>
+    </div>
+
+    </div>
+
+  </div>
+
+  <div class="col">
+
+    <div class="alert alert-danger" role="alert">
+      Please go through this to do List to Complete your job Post.
+      <br>
+
+
+      <ul class="list-group mb-3">
+          <li class="bg-notice-red list-group-item d-flex justify-content-between lh-condensed" data-toggle="modal" data-target="#newAddress" data-whatever="@mdo" >
+            <div>
+              <h6 class="my-0">Address</h6>
+              <small class="text-muted"> This job will not be displayed unless you provide an address. </small>
+            </div>
+            <span class="text-muted">Important</span>
+          </li>
+          
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Requirements</h6>
+              <small class="text-muted">Please add a Job requirement ( optional ).</small>
+            </div>
+            <span class="text-muted">Not Provided</span>
+          </li>
+
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Responsibilities</h6>
+              <small class="text-muted">Please add a Job Responsibilities ( optional ).</small>
+            </div>
+            <span class="text-muted">Not Provided</span>
+          </li>
+
+      </ul>
+
+
+    </div>
+
+    <div class="contacts_modal">
+      <%= render 'jobs/modal' %>
+    </div>
+
+
+    <h3> <%= @job.title %> </h3>
+    <div><%= @job.description.html_safe %></div>
+
+  </div>
+</div>
+  
+
+
+  <%#= link_to 'Edit', edit_job_path(@job) %>
+  <%#= link_to 'Back', jobs_path %>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

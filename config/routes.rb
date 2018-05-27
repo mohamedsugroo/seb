@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :searches
   mount Ckeditor::Engine => '/ckeditor'
   resources :jobs
   resources :contacts

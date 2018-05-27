@@ -1,6 +1,27 @@
-<h1>Editing Job</h1>
+<div class="container">
+	<h1>Editing Job</h1>
 
-<%= render 'form', job: @job %>
+	<ul class="nav justify-content-center form-nav-custom">
+		<li class="nav-item fm fm-done">
+			Title and Sector
+		</li>
+		<li class="nav-item hp fm">
+			Hours and Payment
+		</li>
+		<li class="nav-item cat fm">
+			Category
+		</li>
+		<li class="nav-item desc fm">
+			Description
+		</li>
+	</ul>
 
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
+
+	<%= render 'form', job: @job %>
+
+
+
+	<%#= link_to 'Show', @job %>
+	<%#= link_to 'Back', jobs_path %>
+
+</div>

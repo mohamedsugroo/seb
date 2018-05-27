@@ -1,0 +1,68 @@
+<div class="modal fade" id="newAddress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Address</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_for (@contact) do |f| %>
+        <div class="modal-body">
+
+          <div class="alert alert-warning" role="alert">
+            How this info is used. <br>
+            1. Search relavance  <br>
+            2. shown to contractors only once you hired them <br>
+          </div>
+
+
+          <div class="field">
+            <%= f.label :phone_number %>
+            <%= f.text_field :phone_number, type: 'phone', class: 'form-control form-control-lg' %>
+          </div>
+
+          <div class="field">
+            <%= f.number_field :job_id, value: @job.id, type: 'hidden', class: 'form-control' %>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label> Door </label>
+              <input id="contact_door_number" class="form-control form-control-lg" type="text" placeholder="Door">
+            </div>
+            <div class="col">
+              <label> First Line </label>
+
+              <input id="contact_first_line_js" class="form-control form-control-lg" type="text" placeholder="First Line">
+
+            </div>
+          </div>
+
+          <div class="field">
+              <label> city </label>
+              <input id="contact_city" class="form-control form-control-lg" type="text" placeholder="City">
+          </div>
+
+          
+
+          <div class="field">
+            <%= f.text_field :first_line, type: 'hidden', class: 'form-control' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :post_code %>
+            <%= f.text_field :post_code, class: 'form-control' %>
+          </div>
+        
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit 'Save', class: 'btn btn-primary' %>
+        </div>
+        <% end %>
+
+    </div>
+  </div>
+</div>

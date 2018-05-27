@@ -105,7 +105,7 @@ $(document).on('turbolinks:load', function() {
 
 
 		function cost() {
-			var first_value = $('#job_number_of_hours').val();
+			var first_value = $('#job_hourly_rate').val();
 			var second_value = $('#job_number_of_hours').val();
 
 			var cost = first_value * second_value;

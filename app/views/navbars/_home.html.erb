@@ -12,10 +12,11 @@
 
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="btn  sign_in" href="#">Sign In</a>
-        <a class="btn sign_up" href="<%= register_path %>">Register</a>
+        <a class="btn sign_up" id="new_register_enter" >Register</a>
         <a class="btn btn-primary" href="<%= new_job_path %>">Post a Job</a>
       </nav>
 
+      <%= render 'navbars/register' %>
 
 </div>
 

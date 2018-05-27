@@ -13,6 +13,11 @@
         <div class="page_one_company">
 
             <div class="field">
+              <%= f.label :avatar %><br />
+              <%= f.file_field :avatar, class: 'form-control form-control-lg' %>
+            </div>
+
+            <div class="field">
               <%= f.label :name %><br />
               <%= f.text_field :name, class: 'form-control form-control-lg' %>
             </div>

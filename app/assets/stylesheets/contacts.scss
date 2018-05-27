@@ -1,3 +1,43 @@
-// Place all the styles related to the contacts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#newAddress{
+	.col {
+		padding: 0;
+		margin: 0;
+	}
+	.row {
+		padding: 0;
+		margin: 0;
+	}
+
+	.col-md-4 {
+		padding: 0;
+		margin: 0;
+		padding-right: 10px;
+	}
+}
+
+
+
+.bg-notice-red {
+	background: #ff3d3d;
+	color: white;
+
+	.text-muted {
+		color: white !important
+	}
+}
+
+
+.list-group-item {
+	cursor: pointer;
+}
+
+
+
+.bg-notice-done {
+	background: #1abc9c;
+	color: white;
+
+	.text-muted {
+		color: white !important
+	}
+}

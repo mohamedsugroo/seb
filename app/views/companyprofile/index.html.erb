@@ -12,7 +12,7 @@
 					<div class="info">
 						<div class="row">
 							<div class="col">
-								<h3>148</h3>
+								<h3><%= current_company.jobs.size %></h3>
 								<h5 class="thin">Jobs posted</h5>
 							</div>
 							<div class="col">
@@ -21,7 +21,7 @@
 							</div>
 							<div class="col">
 								<h3>128</h3>
-								<h5 class="thin">Active Jobs</h5>
+								<h5 class="thin">Profile Views</h5>
 							</div>
 						</div>
 					</div>
@@ -58,71 +58,35 @@
 	<div class="jobs_list_company">
 		<ul class="jobs_item">
 
-			<li class="items">
-				<a href="#job">
-					<h4 class="job_title">
-						Security- Door Supervisor 
-						<label class="job_status active_job_light">Active</label>
-					</h4>
-					<span class="job_company thin">Premium Security Services</span> | 
-					<span class="job_location thin">London</span> <br>
-					<span class="job_date thin">1 Day ago</span> | 
-					<span class="job_hourly_rate thin"> £9.50 - £15.00 an hour </span> | 
-					<span class="payment_method thin">Cash </span>  |
-					<span class="payment_date thin">Same Day</span>   
-					<!-- <hr> -->
-					<p class="job_sumary">
-						Must hold a valid Front Line Door Supervisors SIA License*. Premium Security Services is a well respected and recognized brand. London, Greater London....
-					</p>
-				</a>
-			</li>
+			<% current_company.jobs.each do |job| %>
+				
+				<li class="items">
+					<a href="<%= job_path(job) %>">
+						<h4 class="job_title">
+							<%= job.title %>
+							<label class="job_status active_job_green">Active</label>
+						</h4>
+						<span class="job_company thin">
+							<%= job.company.name%>
+						</span> | 
+						<span class="job_location thin">London</span> | 
+						<span class="job_date thin"><%= time_ago_in_words(job.created_at) %></span> <br>
+						<strong class="thin">Payment Method | </strong> 
+						<span class="job_hourly_rate thin"> £ <%= job.hourly_rate %> an hour </span> | 
+						<span class="payment_method thin">
+							<%= job.payment_method %>
+						</span>  |
+						<span class="payment_date thin">
+							<%= job.payment_date %>
+						</span>   
+						<!-- <hr> -->
+						<p class="job_sumary">
+							Must hold a valid Front Line Door Supervisors SIA License*. Premium Security Services is a well respected and recognized brand. London, Greater London....
+						</p>
+					</a>
+				</li>
 
-
-
-
-			<li class="items">
-				<a href="#job">
-					<h4 class="job_title">
-						Security- Door Supervisor 
-						<label class="job_status active_job_green">Active</label>
-					</h4>
-					<span class="job_company thin">Premium Security Services</span> | 
-					<span class="job_location thin">London</span> <br>
-					<span class="job_date thin">2 Days ago</span> | 
-					<span class="job_hourly_rate thin"> £9.50 - £15.00 an hour </span> | 
-					<span class="payment_method thin">Cash </span>  |
-					<span class="payment_date thin">Same Day</span>   
-					<!-- <hr> -->
-					<p class="job_sumary">
-						Must hold a valid Front Line Door Supervisors SIA License*. Premium Security Services is a well respected and recognized brand. London, Greater London....
-					</p>
-				</a>
-			</li>
-
-
-
-
-
-			<li class="items">
-				<a href="#job">
-					<h4 class="job_title">
-						Security- Door Supervisor 
-						<label class="job_status active_job">Active</label>
-					</h4>
-					<span class="job_company thin">Premium Security Services</span> | 
-					<span class="job_location thin">London</span> <br>
-					<span class="job_date thin">2 Days ago</span> | 
-					<span class="job_hourly_rate thin"> £9.50 - £15.00 an hour </span> | 
-					<span class="payment_method thin">Cash </span>  |
-					<span class="payment_date thin">Same Day</span>   
-					<!-- <hr> -->
-					<p class="job_sumary">
-						Must hold a valid Front Line Door Supervisors SIA License*. Premium Security Services is a well respected and recognized brand. London, Greater London....
-					</p>
-				</a>
-			</li>
-
-
+			<% end %>
 
 
 		</ul>
