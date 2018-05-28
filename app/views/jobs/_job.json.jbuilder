@@ -7,3 +7,14 @@ json.address job.contacts do |contact|
 	json.postcode	contact.post_code
 	
 end
+
+
+
+json.requirements job.requirements do |req|
+
+	json.job_id	req.job_id
+	json.name	req.name
+	json.created_at	req.created_at
+
+	
+end

@@ -1,6 +1,6 @@
 class RequirementsController < ApplicationController
 
-	before_action :set_contractor_aproval, only: [:destroy]
+	before_action :set_req, only: [:destroy]
 
 	def create
 	    @req = Requirement.new(req_params)
@@ -18,15 +18,6 @@ class RequirementsController < ApplicationController
 
 
 	private
-
-		def redirect_to_back_or_default(default = root_url)
-			if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
-				redirect_to :back
-			else
-				redirect_to default
-			end
-		end
-
 
 		def set_req
 			@req = Requirement.find(params[:id])

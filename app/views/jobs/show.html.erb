@@ -45,6 +45,40 @@
       
     </p>
 
+
+    <p>
+      <strong>Requirements</strong> <br>
+      <% if @job.requirements.size > 0 %>
+        <ol>
+          <% @job.requirements.each do |req| %>
+              <li><%= req.name %></li>
+          <% end %>
+        </ol>
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Responsibilities</strong> <br>
+      <% if @job.responsibilities.size > 0 %>
+
+
+          <ul class="list-group mb-3 p0 m0">
+          <% @job.responsibilities.each do |req| %>
+            <li class="bg-light-ng d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0"><%= req.name %></h6>
+                <small class="text-muted"><%= req.note %></small>
+              </div>
+              <span class="text-muted">
+                <%= link_to 'Delete', req, method: :delete, class: 'btn btn-danger' %>
+              </span>
+            </li>
+          <% end %>
+          </ul>       
+
+      <% end %>
+    </p>
+
     <div>
       <button class="new_bid btn btn-primary btn-lg">
         Submit a Proposal <i class="fab fa-earlybirds"></i>
@@ -59,8 +93,6 @@
 
     <% if company_signed_in? %>
       <% if @job.company_id == current_company.id %>
-
-
 
         <% if @job.contacts.size > 0 %>
           <div class="alert alert-success" role="alert">
@@ -103,28 +135,33 @@
 
 
 
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <li class="list-group-item d-flex justify-content-between lh-condensed" data-toggle="collapse" data-target="#collapserequirements" aria-expanded="false" aria-controls="collapseExample">
                 <div>
                   <h6 class="my-0">Requirements</h6>
                   <small class="text-muted">Please add a Job requirement ( optional ).</small>
                 </div>
-                <span class="text-muted">
+                <span class="text-muted text-lg">
                   <% if @job.requirements.size > 0 %>
-                    <span class="badge bg-notice-done"><%= @job.requirements.size  %></span>
-                    <i class="fas fa-check-circle"></i>
+                    <!-- <span class="badge bg-notice-done"><%#= @job.requirements.size  %></span> -->
+                    <i class="text-done fas fa-check-circle"></i>
                   <% else %>
                     Not Provided <i class="fas fa-times-circle"></i>
                   <% end %>
                 </span>
               </li>
 
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <li class="list-group-item d-flex justify-content-between lh-condensed" data-toggle="collapse" data-target="#collapseres" aria-expanded="false" aria-controls="collapseExample">
+                
                 <div>
                   <h6 class="my-0">Responsibilities</h6>
                   <small class="text-muted">Please add a Job Responsibilities ( optional ).</small>
                 </div>
                 <span class="text-muted">
-                  Not Provided <i class="fas fa-times-circle"></i>
+                  <% if @job.responsibilities.size > 0 %>
+                    <!-- <span class="badge bg-notice-done"><%#= @job.responsibilities.size  %></span> --> <i class="text-done fas fa-check-circle"></i>
+                  <% else %>
+                    Not Provided <i class="fas fa-times-circle"></i>
+                  <% end %>
                 </span>
               </li>
 
@@ -139,17 +176,37 @@
     </div>
 
 
-    <%= form_for @req do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <br>
-        <%#= f.label :job_id %>
-        <%= f.text_field :job_id, value: @job.id, type: 'hidden' %>
+    <div class="collapse" id="collapserequirements">
+      <div class="card card-body p-3">
+        <%= form_for @req do |f| %>
+            <%= f.label :Requirements %>
+            <%= f.text_field :name, class: 'form-control form-control-lg' %>
+            <br>
+            <%#= f.label :job_id %>
+            <%= f.text_field :job_id, value: @job.id, type: 'hidden' %>
+            <%= f.submit 'Add Requirement', class: 'btn btn-info btn-secondary' %>
+        <% end %>
+      </div>
+    </div>
 
-        <br>
 
-        <%= f.submit %>
-    <% end %>
+
+    <div class="collapse" id="collapseres">
+      <div class="card card-body p-3">
+        <%= form_for @res do |f| %>
+            <%#= f.label :Responsibility %>
+            <%= f.text_field :name, class: 'form-control form-control-lg', placeholder: 'Responsibility' %>
+            <br>
+            <%= f.text_area :note, class: 'form-control form-control-lg', placeholder: 'Not' %>
+            <br>
+            <%#= f.label :job_id %>
+            <%= f.text_field :job_id, value: @job.id, type: 'hidden' %>
+            <%= f.submit 'Add Responsibility', class: 'btn btn-info btn-secondary' %>
+        <% end %>
+      </div>
+    </div>
+
+    <br><br>
 
     <h3> <%= @job.title %> </h3> <br>
     <div><%= @job.description.html_safe %></div>
@@ -158,6 +215,9 @@
 
 
 </div>
+
+
+
   
 
 

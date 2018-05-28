@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   
   resources :profilecompanies, only: [:show, :edit]
   resources :requirements, only: [:create, :destroy]
+  resources :responsibilities, only: [:create, :destroy]
 
   root 'home#index'
 
