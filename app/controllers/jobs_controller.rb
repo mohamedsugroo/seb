@@ -7,6 +7,7 @@ class JobsController < ApplicationController
 
   def show
     @contact = Contact.new
+    @req = Requirement.new
   end
 
   def new

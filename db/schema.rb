@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_27_165609) do
+ActiveRecord::Schema.define(version: 2018_05_27_195411) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -151,6 +151,14 @@ ActiveRecord::Schema.define(version: 2018_05_27_165609) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "requirements", force: :cascade do |t|
+    t.string "name"
+    t.integer "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_requirements_on_job_id"
   end
 
   create_table "searches", force: :cascade do |t|

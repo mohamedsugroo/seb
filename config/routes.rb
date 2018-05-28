@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/register', to: "home#register"
   
   resources :profilecompanies, only: [:show, :edit]
+  resources :requirements, only: [:create, :destroy]
 
   root 'home#index'
 
