@@ -4,7 +4,7 @@ console.log("Angular Activated", url);
 
 
 angular.module('sebkiApp', [])
-.controller('jobsController', function($scope, $http) {
+.controller('jobsController', ['$scope','$http',function($scope, $http) {
 	console.log("Jobs");
 
 	$http.get(url).
@@ -12,4 +12,4 @@ angular.module('sebkiApp', [])
 		$scope.jobsList = response.data.jobs;
 		console.log(response.data.jobs);
 	});
-})
+}])
