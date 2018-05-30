@@ -69,9 +69,15 @@
                 <h6 class="my-0"><%= req.name %></h6>
                 <small class="text-muted"><%= req.note %></small>
               </div>
-              <span class="text-muted">
-                <%= link_to 'Delete', req, method: :delete, class: 'btn btn-danger' %>
-              </span>
+              <% if company_signed_in? %>
+                <% if current_company.id == @job.company_id %>
+                  <span class="text-muted">
+                    <%= link_to 'Delete', req, method: :delete, class: 'btn btn-danger' %>
+                  </span>
+                <% end %>
+              <% end %>
+
+
             </li>
           <% end %>
           </ul>       
@@ -111,7 +117,7 @@
                   <li class="bg-notice-done list-group-item d-flex justify-content-between lh-condensed" >
                     <div>
                       <h6 class="my-0">Address</h6>
-                      <small class="text-muted"> This job will not be displayed unless you provide an address. </small>
+                      <small class="text-muted"> Address hass been submited. </small>
                     </div>
                     <span class="text-muted">
                       Done 

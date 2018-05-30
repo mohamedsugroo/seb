@@ -56,7 +56,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
       :utr, :first_name, :last_name, :gender,
       :firstline_address, :postcode, :city, :country,
       :mobile, :uref, :right_to_work_uk, :bio,
-      :dob,:preferred_hourly_rate
+      :dob,:preferred_hourly_rate, :avatar
     ])
   end
 

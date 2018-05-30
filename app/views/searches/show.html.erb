@@ -1,14 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="search_results" ng-controller="jobsController">
+	<div class="container">
 
-<p>
-  <strong>Keyword:</strong>
-  <%= @search.keyword %>
-</p>
+		<div class="row">
+			<div class="col-md-3 bg-light"></div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @search.location %>
-</p>
+			<div class="col">
 
-<%= link_to 'Edit', edit_search_path(@search) %> |
-<%= link_to 'Back', searches_path %>
+				<div class="jobs_list_company">
+					<ul class="jobs_item">
+
+						<li class="items" ng-repeat="job in jobsList">
+
+				          <a href="{{ job.url }}">
+				            <h4 class="job_title">
+				              {{ job.title }}
+				              <label class="job_status active_job_green">{{ job.status }}</label>
+				            </h4>
+				            <span class="job_company thin">
+				              {{ job.title }}
+				            </span> | 
+				            <span class="job_location thin">London</span> | 
+				            <span class="job_date thin">{{ job.created_at }}</span> <br>
+				            <strong class="thin">Payment Method | </strong> 
+				            <span class="job_hourly_rate thin"> £ {{ job.hourly_rate }} an hour </span> | 
+				            <span class="payment_method thin">
+				              {{job.payment_method}}
+				            </span>  |
+				            <span class="payment_date thin">
+				              {{ job.payment_date }}
+				            </span>   
+				            <!-- <hr> -->
+				            <p class="job_sumary">
+				              {{job.summary}}
+				            </p>
+				          </a>
+
+				        </li>
+				    </ul>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>

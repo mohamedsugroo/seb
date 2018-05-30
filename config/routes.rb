@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :searches
+  resources :searches, only: [:show, :create, :destroy]
   mount Ckeditor::Engine => '/ckeditor'
   resources :jobs
   resources :contacts
