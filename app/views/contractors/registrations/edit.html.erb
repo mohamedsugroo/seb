@@ -9,6 +9,11 @@
       <div class="row">
       <div class="col">
 
+      <div class="field">
+          <%= f.label :avatar %><br />
+          <%= f.file_field :avatar, class: 'form-control form-control-lg' %>
+        </div>
+
         <div class="row">
           <div class="col">
             <div class="field">
@@ -77,7 +82,7 @@
 
         <div class="field">
           <%= f.label :utr %><br />
-          <%= f.email_field :utr, autofocus: true, class: 'form-control' %>
+          <%= f.text_field :utr, autofocus: true, class: 'form-control' %>
         </div>
 
         <br>
@@ -103,22 +108,22 @@
           <div class="col">
             <div class="field">
               <%= f.label :firstline_address %><br />
-              <%= f.email_field :firstline_address, autofocus: true, class: 'form-control' %>
+              <%= f.text_field :firstline_address, autofocus: true, class: 'form-control' %>
             </div>
 
             <div class="field">
               <%= f.label :postcode %><br />
-              <%= f.email_field :postcode, autofocus: true, class: 'form-control' %>
+              <%= f.text_field :postcode, autofocus: true, class: 'form-control' %>
             </div>
 
             <div class="field">
               <%= f.label :city %><br />
-              <%= f.email_field :city, autofocus: true, class: 'form-control' %>
+              <%= f.text_field :city, autofocus: true, class: 'form-control' %>
             </div>
 
             <div class="field">
               <%= f.label :country %><br />
-              <%= f.email_field :country, autofocus: true, class: 'form-control'%>
+              <%= f.text_field :country, autofocus: true, class: 'form-control'%>
             </div>
             <br>
             <label class="btn btn-primary btn-lg">

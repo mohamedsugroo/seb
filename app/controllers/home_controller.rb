@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
 
   	if contractor_signed_in?
-  		redirect_to contractorprofile_index_url
+  		redirect_to profile_path(current_contractor.id)
   	elsif company_signed_in?
   		redirect_to dashboard_url
   	end

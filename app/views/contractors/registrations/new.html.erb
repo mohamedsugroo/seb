@@ -85,14 +85,8 @@
 
     <div class="field">
       <%= f.label :utr %><br />
-      <%= f.email_field :utr, autofocus: true, class: 'form-control' %>
+      <%= f.text_field :utr, autofocus: true, class: 'form-control' %>
     </div>
-
-    <br>
-
-    <label class="btn btn-primary btn-lg" id="contine_to_address">
-      Next Step
-    </label>
 
     </div>
 
@@ -105,42 +99,35 @@
 
   <!-- start page 2 -->
 
-  <div class="contractor_address hidde-input">
+  <div class="contractor_address">
 
     <div class="row">
       <div class="col">
         <div class="field">
           <%= f.label :firstline_address %><br />
-          <%= f.email_field :firstline_address, autofocus: true, class: 'form-control' %>
+          <%= f.text_field :firstline_address, autofocus: true, class: 'form-control' %>
         </div>
 
         <div class="field">
           <%= f.label :postcode %><br />
-          <%= f.email_field :postcode, autofocus: true, class: 'form-control' %>
+          <%= f.text_field :postcode, autofocus: true, class: 'form-control' %>
         </div>
 
         <div class="row">
           <div class="col">
             <div class="field">
               <%= f.label :city %><br />
-              <%= f.email_field :city, autofocus: true, class: 'form-control' %>
+              <%= f.text_field :city, autofocus: true, class: 'form-control' %>
             </div>
           </div>
           <div class="col">
             <div class="field">
               <%= f.label :country %><br />
-              <%= f.email_field :country, autofocus: true, class: 'form-control'%>
+              <%= f.text_field :country, autofocus: true, class: 'form-control'%>
             </div>
           </div>
         </div>
 
-        
-
-        
-        <br>
-        <label class="btn btn-primary btn-lg" id="contine_to_complete">
-          Next Step
-        </label>
 
       </div>
       <div class="col">
@@ -152,7 +139,7 @@
 
 
 
-  <div class="complete_sign_in_info hidde-input">
+  <div class="complete_sign_in_info">
     <div class="row">
       <div class="col">
 
@@ -178,7 +165,7 @@
         <br>
 
         <div class="actions">
-          <%= f.submit "Complete Sign up", class: 'btn btn-primary btn-lg' %>
+          <%= f.submit "Register", class: 'btn btn-primary btn-lg' %>
         </div>
         
       </div>

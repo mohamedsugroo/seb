@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
 
 	console.log("Nav fixed");
 
@@ -16,4 +16,4 @@ $(document).on('turbolinks:load', function() {
 
 	});
 
-});
+// });

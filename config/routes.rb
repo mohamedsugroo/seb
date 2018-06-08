@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :jobs
   resources :contacts
   resources :categories
+  resources :profiles, only: [:index, :show]
+  # get 'profiles/index'
+  # get 'profiles/show'
   # Contractor Dashboard
-  get 'contractorprofile/index'
-  get 'contractorprofile/show'
+  # get 'contractorprofile/index'
+  # get 'contractorprofile/show'
 
   # Company Dashboard
   get '/dashboard', to:'companyprofile#index'

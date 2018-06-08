@@ -1,6 +1,6 @@
-$(document).on('turbolinks:load', function() {
 
-	$("select").addClass("custom-select");
+
+	// $("select").addClass("custom-select");
 
 
 	if ( document.querySelector('.jobForm') !== null ){
@@ -156,5 +156,3 @@ $(document).on('turbolinks:load', function() {
 		}
 
 	};
-
-});

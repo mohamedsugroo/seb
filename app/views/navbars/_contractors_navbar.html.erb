@@ -4,9 +4,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-3">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="<%= root_path %>">
 					<img src="http://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-					Sebki
+					<strong>SEBKI</strong>
 				</a>
 
 			</div>
@@ -30,15 +30,17 @@
 				<div class="dropdown">
 				  <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <p><%= current_contractor.fullname %></p>
-				    <div class="avatar_nav"></div>
+				    <div class="avatar_nav" style="background: url('<%= current_contractor.avatar %>')"></div>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="#">My Profile</a>
+				    <a class="dropdown-item" href="<%= profile_path(current_contractor.id)%>">My Profile</a>
 				    <a class="dropdown-item" href="#">Another action</a>
 				    <a class="dropdown-item" href="#">Account Settings</a>
 				    <hr>
-				    <!-- <a class="dropdown-item" href="#">Sign Out</a> -->
-				    <%= link_to('Logout', class:"dropdown-item", destroy_contractor_session_path, method: :delete) %>
+						<!-- <a class="dropdown-item" href="#">Sign Out</a> -->
+						<% if contractor_signed_in? %>
+						<%= link_to('Logout', destroy_contractor_session_path, method: :delete) %>
+						<% end %>
 				  </div>
 				</div>
 			</div>
@@ -49,13 +51,13 @@
 
 
 
-<% if contractor_signed_in? %>
-  <li>
-	  <%= link_to('Logout', destroy_contractor_session_path, method: :delete) %>
-	  <%= current_contractor.fullname %>                
-  </li>
-<% else %>
-  <li>
-	  <%= link_to('Login', new_contractor_session_path)  %>  
-  </li>
-<% end %>
+<%# if contractor_signed_in? %>
+  <!-- <li> -->
+	  <%#= link_to('Logout', destroy_contractor_session_path, method: :delete) %>
+	  <%#= current_contractor.fullname %>                
+  <!-- </li> -->
+<%# else %>
+  <!-- <li> -->
+	  <%#= link_to('Login', new_contractor_session_path)  %>  
+  <!-- </li> -->
+<%# end %>

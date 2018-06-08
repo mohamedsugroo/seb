@@ -34,9 +34,8 @@
 
 
 .bg-notice-done {
-	background: #1abc9c;
+	background: #1abc9c !important;
 	color: white;
-
 	.text-muted {
 		color: white !important
 	}
@@ -47,3 +46,4 @@
 	color: #1abc9c;
 	font-size: 1.4rem;
 }
+

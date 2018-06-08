@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
 
 // contractor
 
@@ -61,4 +61,4 @@ if ( document.querySelector('.pageRegistertwo') !== null ){
 
 
 
-});
+// });
