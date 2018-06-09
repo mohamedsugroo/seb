@@ -1,0 +1,100 @@
+
+        <h4 class="mb-4 thin">Qualification</h4>
+
+
+        <% if @profile.qualifications.size < 1 %>
+
+            <div class="jumbotron">
+                <% if contractor_signed_in? %>
+                    <% if @profile.id == current_contractor.id %>
+                        <h3 class="display-7 thin">
+                            Ooops No Qualifications Yet...
+                        </h3>
+
+                        <p class="lead">
+                            You haven't specified any qualifications yet please click the button below to add your qualifications...
+                        </p>
+
+                        <!-- <hr class="my-4"> -->
+
+                        <button class="new_qualification btn btn-primary btn-lg" onclick="toogleDivClass();">Add Qualification</button>
+                    <% end %>
+                <% else %>
+
+                    <h1 class="display-4">Ooops No Qualifications Yet </h1>
+
+                    <p class="lead">
+                        This Contractor hass not added any qualifications yest
+                    </p>
+
+                <% end %>
+
+                
+            </div>
+
+        <% else %>
+        
+        
+            <table class="table table-hover">
+                <tbody>
+                    <% @qualifications.each do |qualification| %>
+                        <tr>
+                            <td><%= qualification.name %></td>
+                            <td><%= qualification.qtype %></td>
+                            <td><%= qualification.level %></td>
+                            <td><%= qualification.date_issued %></td>
+                            <td>
+                                <%= link_to 'Delete', qualification, method: :delete, class: 'btn btn-danger' %>
+                            </td>
+                        </tr>
+                    <% end %>
+              </tbody>
+            </table>
+
+            <button class="new_qualification btn btn-primary btn-lg" onclick="toogleDivClass();">Add Qualification</button>
+
+
+        <% end %>
+
+
+        <div id="newQualification" class="p-4 divhidder">
+            <h3 class="thin">New Qualification</h3>
+
+            <%= form_for @qualification do |f| %>
+                <div class="field">
+                    <%= f.label :name, "Subject" %>
+                    <%= f.text_field :name, placeholder: 'Qualification Subject', class: 'form-control form-control-lg'  %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :qtype, "Qualification Type"  %>
+                    <%= f.select :qtype,
+                        [ 'GCSE', 'A-level', 'Higher National Certificate', 'Higher National Diploma', "Non-honours bachelor's degree", "Bachelor's degree with honours", " Master's degree" ],
+                        include_blank: 'Please Select a Qualification Type'
+                    %>
+                </div>
+
+
+                <div class="field">
+                    <%= f.label :level %>
+                    <%= f.text_field :level, placeholder: 'Level', class: 'form-control form-control-lg'  %>
+                </div>
+
+
+                <div class="field">
+                    <%= f.label :date_issued %>
+                    <%= f.date_field :date_issued, placeholder: 'Date Issued', class: 'form-control form-control-lg'  %>
+                </div>
+
+
+                <div class="field">
+                    <%= f.submit "Add Qualification", class: 'btn btn-primary btn-lg' %>
+                </div>
+
+                <script>
+                    $("#qualification_qtype").addClass("form-control form-control-lg");
+                </script>
+
+
+            <% end %>
+        </div>

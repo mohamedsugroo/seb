@@ -1,31 +1,107 @@
-<div class="contractor_profiler p-3">
+<div class="contractor_profiler pt-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                h
+            <div class="col-md-2">
+
+                <div class="profile_user_image" style=" background-image: url('<%= @profile.avatar(:original) %>') ">
+                    
+                </div>
+
             </div>
             <div class="col">
-                j
+                <h3><%= @profile.fullname %></h3>
+                <small>
+                    <h6 class="light"> 
+                        Gender | <%= @profile.gender %> - 
+                        Location | <%= @profile.city + " " + @profile.country %>
+                    </h6>
+                    <h6 class="light">
+                        Joined | <%= time_ago_in_words(@profile.created_at) %> 
+                        Last Sign In | <%= time_ago_in_words(@profile.last_sign_in_at) %>
+                    </h6>
+                </small>
+
+                <div class="row pt-3">
+                    <div class="col-md-2">
+                        <div class="money">
+                            <h3>
+                                <i class="fas fa-pound-sign"></i>
+                                <% if @profile.preferred_hourly_rate? %>
+                                    <%= number_with_precision(@profile.preferred_hourly_rate, precision: 2) %>
+                                <% else %>
+                                    N/A
+                                <% end %>
+                                
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="stats">
+                            <div class="row">
+                                <div class="col">
+                                    <h6>Jobs</h6>
+                                    <h3><%= @profile.bids.size %></h3>
+                                </div>
+                                <div class="col">
+                                    <h6>Hired</h6>
+                                    <h3>0</h3>
+                                </div>
+                                <div class="col">
+                                    <h6>Reviews</h6>
+                                    <h3>0</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <ul class="tabs_custom">
+            <li class="custom_item">
+                <button class="btn btn-round btn-glow" id="qandl" onclick="qandl();">
+                    Qualification and Licence
+                </button>
+            </li>
+
+            <li class="custom_item">
+               <button class="btn btn-round" id="whbtn" onclick="Whistory();">
+                   Work History
+               </button>
+            </li>
+
+            <li class="custom_item">
+                <button class="btn btn-round" id="rbtn" onclick="reviews();">
+                    Reviews
+                </button>
+            </li>
+        </ul>
+
+
     </div>
 </div>
 
-<%= @profile.fullname %>
-<%= @profile.email %>
-<%= @profile.utr %>
-<%= @profile.last_name %>
-<%= @profile.gender %>
-<%= @profile.firstline_address %>
-<%= @profile.postcode %>
-<%= @profile.city %>
-<%= @profile.country %>
-<%= @profile.mobile %>
-<%= @profile.uref %>
-<%= @profile.right_to_work_uk %>
-<%= @profile.bio %>
-<%= @profile.dob %>
-<%= @profile.preferred_hourly_rate %>
-<%= @profile.created_at %>
-<%= @profile.updated_at %>
-<%= @profile.avatar %>
+
+
+
+<div class="container mt-4"> 
+
+
+    <div id="qalContainer" class="w60">
+
+        <%= render 'profiles/licence' %>
+        <hr>
+        <%= render 'profiles/qualification' %>
+
+    </div>
+
+    <div id="whContainer" class="divhidder">
+        <%= render 'profiles/workhistory' %>
+    </div>
+
+    <div id="reviewContainer" class="divhidder">
+        <%= render 'profiles/reviews' %>
+
+    </div>
+
+</div>

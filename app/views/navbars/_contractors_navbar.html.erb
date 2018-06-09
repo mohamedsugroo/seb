@@ -5,26 +5,14 @@
 		<div class="row">
 			<div class="col-md-3">
 				<a class="navbar-brand" href="<%= root_path %>">
-					<img src="http://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+					<!-- <img src="http://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
 					<strong>SEBKI</strong>
 				</a>
 
 			</div>
 			<div class="col-md-6">
 
-				<div class="input-group mb-3">
-				  <input type="text" class="form-control" placeholder="What ..." aria-label="What ..." aria-describedby="basic-addon2">
-
-				  <input type="text" class="form-control" placeholder="Where ..." aria-label="Where ..." aria-describedby="basic-addon2">
-
-
-				  <div class="input-group-append">
-				    <button class="btn btn-primary" type="button">
-				    	<i class="fa fa-search"></i>
-				    </button>
-				  </div>
-				</div>
-
+				<%= render 'navbars/searchs' %>
 			</div>
 			<div class="col-md-3 text-align-right">
 				<div class="dropdown">
@@ -33,13 +21,22 @@
 				    <div class="avatar_nav" style="background: url('<%= current_contractor.avatar %>')"></div>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				  	
+				  	<div class="profile_sample">
+				  		<div class="user_holder">
+				  		<%= image_tag current_contractor.avatar(:original), class:'nav_avatar' %>
+				  		<h5 class="user_name_nav_drop"><%= current_contractor.fullname %></h5>
+				  		</div>
+				  	</div>
+
 				    <a class="dropdown-item" href="<%= profile_path(current_contractor.id)%>">My Profile</a>
-				    <a class="dropdown-item" href="#">Another action</a>
-				    <a class="dropdown-item" href="#">Account Settings</a>
+				    <a class="dropdown-item" href="#">Community Forum</a>
+				    <a class="dropdown-item" href="<%= edit_contractor_registration_path %>">Account Settings</a>
+
 				    <hr>
 						<!-- <a class="dropdown-item" href="#">Sign Out</a> -->
 						<% if contractor_signed_in? %>
-						<%= link_to('Logout', destroy_contractor_session_path, method: :delete) %>
+						<%= link_to('Sign Out', destroy_contractor_session_path, method: :delete, class: "dropdown-item") %>
 						<% end %>
 				  </div>
 				</div>

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :jobs
   resources :contacts
   resources :categories
+  resources :bids, only: [:create, :destroy]
+  resources :qualifications, only: [:create, :destroy]
+  resources :licences, except: [:index, :show]
   resources :profiles, only: [:index, :show]
   # get 'profiles/index'
   # get 'profiles/show'

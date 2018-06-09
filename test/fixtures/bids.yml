@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contractor: one
+  job: one
+  price: 9.99
+  numberofhours: 
+  proposal: MyText
+
+two:
+  contractor: two
+  job: two
+  price: 9.99
+  numberofhours: 
+  proposal: MyText

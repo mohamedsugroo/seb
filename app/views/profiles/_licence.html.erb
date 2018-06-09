@@ -1,0 +1,52 @@
+    <div class="contractorLicence">
+        <h4 class="mb-4 thin">Licence</h4>
+
+
+        <button class="new_qualification btn btn-primary btn-lg" onclick="toogleLicenceClass();">Add Qualification</button>
+
+
+        <div id="newLicence" class="p-4 divhidder">
+            <h3 class="thin">New Qualification</h3>
+
+            <%= form_for @licence do |f| %>
+                <div class="field">
+                    <%= f.label :name, "Subject" %>
+                    <%= f.text_field :name, placeholder: 'Qualification Subject', class: 'form-control form-control-lg'  %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :ltype, "Qualification Type"  %>
+                    <%= f.select :ltype,
+                        [ 'SIA - Cash and Valuables in Transit', 'SIA - Door Supervision', 
+                            'SIA - CCTV Operator','SIA - Vehicle Immobilising','SIA - Security Guarding','SIA - Close Protection','SIA - Key Holding' ],
+                        include_blank: 'Please Select Licence Type'
+                    %>
+                </div>
+
+
+                <div class="field">
+                    <%= f.label :number, 'Licence Number' %>
+                    <%= f.text_field :number, placeholder: '1102 0304 0506 7781', class: 'form-control form-control-lg'  %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :expiration_date, 'Expiration Date' %>
+                    <%= f.date_field :expiration_date, placeholder: '1102 0304 0506 7781', class: 'form-control form-control-lg'  %>
+                </div>
+
+
+
+                <div class="field">
+                    <%= f.submit "Add Licence", class: 'btn btn-primary btn-lg' %>
+                </div>
+
+                <script>
+                    $("select").addClass("form-control form-control-lg");
+                </script>
+
+
+            <% end %>
+        </div>
+
+
+    </div>

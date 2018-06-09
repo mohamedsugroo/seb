@@ -1,3 +1,41 @@
+<!-- <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="What ..." aria-label="What ..." aria-describedby="basic-addon2">
+
+  <input type="text" class="form-control" placeholder="Where ..." aria-label="Where ..." aria-describedby="basic-addon2">
+
+
+  <div class="input-group-append">
+    <button class="btn btn-primary" type="button">
+    	<i class="fa fa-search"></i>
+    </button>
+  </div>
+</div> -->
+<% if contractor_signed_in? %>
+
+
+
+<%= form_for Search.new do |f| %>
+	<div class="input-group mb-3">
+  	
+	    <%= f.text_field :keyword, class: 'form-control', placeholder: "job title, keywords..." %>
+	    <%= f.text_field :location, class: 'form-control', placeholder: "city or postcode ..." %>
+	    <div class="input-group-append">
+	      <button class="btn btn-primary">
+	        <i class="fa fa-search"></i>
+	      </button>
+	    </div>
+	</div>
+
+<% end %>
+
+
+
+
+<% else %>
+
+
+
+
 <div class="search_box">
 
 <%= form_for Search.new do |f| %>
@@ -16,3 +54,8 @@
 
 
 </div>
+
+
+<% end %>
+
+

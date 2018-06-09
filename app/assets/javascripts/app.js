@@ -3,8 +3,9 @@ var url = document.URL+".json"
 console.log("Angular Activated", url);
 
 
-angular.module('sebkiApp', [])
-.controller('jobsController', ['$scope','$http',function($scope, $http) {
+var myapp = angular.module('sebkiApp', []);
+
+myapp.controller('jobsController', ['$scope','$http',function($scope, $http) {
 	console.log("Jobs");
 
 	$http.get(url).

@@ -66,3 +66,40 @@
     </div>
   </div>
 </div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="bidModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+    <%= form_for Bid.new do |f| %>
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Proposal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= f.text_field :job_id, value: @job.id, type: 'hidden' %>
+        <%= f.label :price, 'New Hourly Rate' %>
+        <%= f.number_field :price, class: 'form-control form-control-lg mb-3', value: @job.hourly_rate %>
+
+
+
+        <%= f.cktext_area :proposal %>
+
+      </div>
+      <div class="modal-footer bg-light">
+        <%= f.submit "Submit", class: 'btn btn-primary' %>
+      </div>
+
+    <% end %>
+
+
+    </div>
+  </div>
+</div>

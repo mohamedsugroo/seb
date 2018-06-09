@@ -18,3 +18,6 @@ json.requirements job.requirements do |req|
 
 	
 end
+
+
+json.bids job.bids.size

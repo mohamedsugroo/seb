@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_132809) do
+ActiveRecord::Schema.define(version: 2018_06_09_111228) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 2018_05_28_132809) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "bids", force: :cascade do |t|
+    t.integer "contractor_id"
+    t.integer "job_id"
+    t.decimal "price"
+    t.integer "numberofhours"
+    t.text "proposal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contractor_id"], name: "index_bids_on_contractor_id"
+    t.index ["job_id"], name: "index_bids_on_job_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -151,6 +163,28 @@ ActiveRecord::Schema.define(version: 2018_05_28_132809) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "licences", force: :cascade do |t|
+    t.string "name"
+    t.string "expiration_date"
+    t.string "number"
+    t.string "ltype"
+    t.integer "contractor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contractor_id"], name: "index_licences_on_contractor_id"
+  end
+
+  create_table "qualifications", force: :cascade do |t|
+    t.string "name"
+    t.string "qtype"
+    t.integer "contractor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "level"
+    t.date "date_issued"
+    t.index ["contractor_id"], name: "index_qualifications_on_contractor_id"
   end
 
   create_table "requirements", force: :cascade do |t|

@@ -6,6 +6,7 @@ class Job < ApplicationRecord
 	has_many :contacts
 	has_many :requirements
 	has_many :responsibilities
+	has_many :bids
 
 	def complete
 		if self.contacts.size > 0 ||self.requirements > 0 || self.requirements > 0
