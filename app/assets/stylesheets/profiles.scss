@@ -105,3 +105,37 @@
 	width: 60% ;
 	margin: 0 auto ;
 }
+
+
+
+
+.review_input {
+	width: 100%;
+	// background: red;
+
+	.user_avatar {
+		width: 50px;
+		height: 50px;
+		background: yellow;
+		border-radius: 100%;
+		margin: 4px;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.buttons_option {
+		padding: 12px;
+	}
+
+	.input_border {
+	    border: 1px solid #e2e2e2;
+	    border-radius: 3px;
+
+	    textarea.form-control {
+	    	border: red !important;
+	    }
+	}
+
+}
+
+

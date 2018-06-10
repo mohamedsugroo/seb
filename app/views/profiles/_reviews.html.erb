@@ -1,41 +1,68 @@
 <div class="review_container">
 <h4 class="thin">Review</h4>
 
-<br><br>
-
-<div class="media mb-3">
-  <img class="align-self-end mr-3" src="<%= current_contractor.avatar %>" alt="Generic placeholder image" style="width: 64px; height: 64px; border-radius: 100%">
-  <div class="media-body">
-    <h5 class="mt-0">Bottom-aligned media</h5>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-    <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
-</div>
+<br>
 
 
-<br><br>
+<% if contractor_signed_in? %>
 
-<div class="media mb-3">
-  <img class="align-self-end mr-3" src="<%= current_contractor.avatar %>" alt="Generic placeholder image" style="width: 64px; height: 64px; border-radius: 100%">
-  <div class="media-body">
-    <h5 class="mt-0">Bottom-aligned media</h5>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-    <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
-</div>
+	<%# if current_contractor.id != @profile.id %>
+	
+		<div class="review_input">
 
-<br><br>
+			<div class="row">
+				<div class="col-md-1 mt-2">
+					<div class="user_avatar mt-3" style="background-image: url('<%= current_contractor.avatar(:original) %>')">
+						
+					</div>
+					
+				</div>
+				<div class="col p-3 ml-3">
+					<div class="inputField">
+						<strong><%= current_contractor.fullname %></strong>
+						<div class="input_border">
+							<textarea class="form-control" id=""></textarea>
+							<div class="buttons_option bg-light">
+							<div class="row">
+								<div class="col">
+									<h5>
+										<span class="badge badge-light">
+											<span id="chars"></span>
+										</span>
+									</h5>
+								</div>
+								<div class="col-md-3">
+									<button class="btn btn-primary">
+										Post Review
+									</button>
+								</div>
+							</div>
+							</div>
+
+							<script>
+
+								var maxLength = 300;
+								$('textarea').keyup(function() {
+								  var length = $(this).val().length;
+								  var length = maxLength-length;
+								  $('#chars').text(length);
+								});
+								
+							</script>
+
+							
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+			
 
 
-<div class="media mb-3">
-  <img class="align-self-end mr-3" src="<%= current_contractor.avatar %>" alt="Generic placeholder image" style="width: 64px; height: 64px; border-radius: 100%">
-  <div class="media-body">
-    <h5 class="mt-0">Bottom-aligned media</h5>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-    <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
-</div>
-
+		</div>
+	<%# end %>
+<% end %>
 
 
 </div>
